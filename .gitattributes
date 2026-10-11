@@ -1,0 +1,4 @@
+# CSP stil blogunun hash'ine bagli: satir sonlari ASLA donusturulmesin.
+*.html -text
+*.woff binary
+*.png binary
