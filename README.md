@@ -6,14 +6,14 @@ Static page, no build step, no tracking, **no JavaScript**, no third-party reque
 (fonts are self-hosted). Served by GitHub Pages from `main`.
 
 ## Security
-- Strict Content-Security-Policy (meta tag): `default-src 'none'`, only this site's own
-  fonts/images and the one inline `<style>` block (allowed by its SHA-256 hash).
-- **If you edit anything inside `<style>`, the hash in the CSP meta tag must be updated**,
-  otherwise the page loses all styling. Recompute:
-  `python -c "import re,hashlib,base64;t=open('index.html',encoding='utf-8').read();s=t.split('<style>',1)[1].split('</style>',1)[0];print(base64.b64encode(hashlib.sha256(s.encode()).digest()).decode())"`
-- `.gitattributes` keeps line endings byte-exact (the hash depends on them).
+- Strict Content-Security-Policy (meta tag): `default-src 'none'`; styles, fonts and images
+  only from this site itself (`'self'`, plus the embedded logo as a `data:` image).
+  No scripts can run at all.
+- All styling lives in `style.css` - edit it freely, no hashes to update.
 
+## Files
 - `index.html` - the page (logo embedded)
+- `style.css` - all styling
 - `og-image.png` - share preview (Discord / Instagram / WhatsApp)
 - `favicon.png`
 - `fonts/` - Fredoka & Nunito (SIL Open Font License, see `fonts/OFL-*.txt`), Latin subset
