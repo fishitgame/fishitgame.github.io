@@ -86,7 +86,7 @@ h1 {
 
 nav { width: 100%; display: flex; flex-direction: column; gap: 14px; }
 .link {
-  display: grid; grid-template-columns: 46px 1fr auto; align-items: center; gap: 14px;
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 14px;
   padding: 12px 16px 12px 12px;
   background: var(--foam); color: var(--navy);
   border: 3px solid var(--navy); border-radius: 22px;
@@ -107,31 +107,33 @@ nav { width: 100%; display: flex; flex-direction: column; gap: 14px; }
 .handle { font-size: 0.85rem; font-weight: 700; color: #4d6684; overflow-wrap: anywhere; }
 .go { font-family: var(--display); font-weight: 700; font-size: 1.3rem; }
 
-.link.featured { background: var(--sun); }
-.link.featured .handle { color: #5b4a06; }
+.link.steam {
+  background: var(--sun); padding-block: 18px; border-radius: 26px;
+  animation: glow 2.6s ease-in-out infinite;
+}
+.link.steam .icon { width: 56px; height: 56px; border-radius: 18px; }
+.link.steam .icon svg { width: 32px; height: 32px; }
+.link.steam .name { font-size: 1.4rem; font-weight: 700; }
+.link.steam .handle { color: #5b4a06; }
+@keyframes glow {
+  0%, 100% { box-shadow: 0 6px 0 var(--shadow), 0 0 0 0 rgba(252, 216, 42, 0.45); }
+  50% { box-shadow: 0 6px 0 var(--shadow), 0 0 26px 6px rgba(252, 216, 42, 0.45); }
+}
+@media (prefers-reduced-motion: reduce) { .link.steam { animation: none; } }
+.link.steam:hover { box-shadow: 0 9px 0 var(--shadow), 0 0 30px 8px rgba(252, 216, 42, 0.5); }
 .badge {
   align-self: flex-start; margin-top: 3px;
   font-size: 0.68rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
   background: var(--navy); color: var(--sun); padding: 2px 8px; border-radius: 999px;
 }
 
-.soon {
-  display: grid; grid-template-columns: 46px 1fr auto; align-items: center; gap: 14px;
-  padding: 12px 16px 12px 12px; border-radius: 22px;
-  border: 3px dashed rgba(143, 220, 245, 0.45); color: var(--kelp);
-}
-.soon .icon { background: rgba(143, 220, 245, 0.12); color: var(--tide); }
-.soon .name { color: var(--foam); }
-.chip {
-  font-size: 0.7rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--tide); border: 2px solid rgba(143, 220, 245, 0.45); border-radius: 999px; padding: 3px 9px;
-}
-
 footer { color: var(--kelp); font-size: 0.82rem; text-align: center; line-height: 1.6; }
 footer b { color: var(--tide); font-weight: 700; }
 
 @media (max-width: 380px) {
-  .link, .soon { grid-template-columns: 40px 1fr auto; gap: 11px; }
+  .link { gap: 11px; }
   .icon { width: 40px; height: 40px; border-radius: 13px; }
   .name { font-size: 1.05rem; }
+  .link.steam .icon { width: 48px; height: 48px; }
+  .link.steam .name { font-size: 1.25rem; }
 }
