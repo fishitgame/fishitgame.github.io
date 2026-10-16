@@ -6,8 +6,6 @@
   font-family: "Nunito"; src: url("fonts/nunito-latin.woff") format("woff");
   font-weight: 200 1000; font-style: normal; font-display: swap;
 }
-/* Layout: one narrow column floating in deep aquarium water; links are chunky stickers cut
-   from the logo (white face, thick navy outline, drop under), bubbles rise behind. */
 :root {
   --abyss: #061630;      /* page water, bottom */
   --surface: #12406e;    /* page water, lit top */
@@ -48,23 +46,23 @@ body {
   100% { transform: translate(-6px, -115vh); opacity: 0.2; }
 }
 @media (prefers-reduced-motion: reduce) { .bubble { animation: none; display: none; } }
-/* Baloncuklar: JavaScript yok - konum/boy/hiz sabit kurallarla. */
-.bubble:nth-child(1) { width: 16px; height: 16px; left: 56.0%; animation-duration: 20.1s; animation-delay: -9.3s; }
-.bubble:nth-child(2) { width: 17px; height: 17px; left: 58.7%; animation-duration: 11.2s; animation-delay: -10.2s; }
-.bubble:nth-child(3) { width: 20px; height: 20px; left: 79.3%; animation-duration: 10.1s; animation-delay: -6.1s; }
-.bubble:nth-child(4) { width: 8px; height: 8px; left: 81.0%; animation-duration: 17.3s; animation-delay: -0.8s; }
-.bubble:nth-child(5) { width: 28px; height: 28px; left: 96.5%; animation-duration: 16.8s; animation-delay: -12.3s; }
-.bubble:nth-child(6) { width: 9px; height: 9px; left: 1.5%; animation-duration: 15.3s; animation-delay: -1.2s; }
-.bubble:nth-child(7) { width: 10px; height: 10px; left: 24.2%; animation-duration: 9.4s; animation-delay: -9.3s; }
-.bubble:nth-child(8) { width: 16px; height: 16px; left: 84.2%; animation-duration: 15.2s; animation-delay: -12.8s; }
-.bubble:nth-child(9) { width: 17px; height: 17px; left: 66.2%; animation-duration: 14.5s; animation-delay: -5.6s; }
-.bubble:nth-child(10) { width: 28px; height: 28px; left: 99.6%; animation-duration: 19.1s; animation-delay: -14.2s; }
-.bubble:nth-child(11) { width: 13px; height: 13px; left: 23.0%; animation-duration: 12.5s; animation-delay: -1.4s; }
-.bubble:nth-child(12) { width: 23px; height: 23px; left: 40.0%; animation-duration: 19.2s; animation-delay: -7.7s; }
-.bubble:nth-child(13) { width: 27px; height: 27px; left: 84.7%; animation-duration: 9.0s; animation-delay: -4.2s; }
-.bubble:nth-child(14) { width: 26px; height: 26px; left: 47.0%; animation-duration: 20.8s; animation-delay: -7.9s; }
-.bubble:nth-child(15) { width: 8px; height: 8px; left: 62.9%; animation-duration: 18.3s; animation-delay: -5.4s; }
-.bubble:nth-child(16) { width: 8px; height: 8px; left: 33.3%; animation-duration: 20.6s; animation-delay: -15.2s; }
+/* bubbles */
+.bubble:nth-child(1) { width: 16px; height: 16px; left: 56%; animation-duration: 20s; animation-delay: -9s; }
+.bubble:nth-child(2) { width: 16px; height: 16px; left: 59%; animation-duration: 11s; animation-delay: -10s; }
+.bubble:nth-child(3) { width: 20px; height: 20px; left: 79%; animation-duration: 10s; animation-delay: -6s; }
+.bubble:nth-child(4) { width: 8px; height: 8px; left: 81%; animation-duration: 17s; animation-delay: -1s; }
+.bubble:nth-child(5) { width: 28px; height: 28px; left: 96%; animation-duration: 17s; animation-delay: -12s; }
+.bubble:nth-child(6) { width: 8px; height: 8px; left: 2%; animation-duration: 15s; animation-delay: -1s; }
+.bubble:nth-child(7) { width: 10px; height: 10px; left: 24%; animation-duration: 9s; animation-delay: -9s; }
+.bubble:nth-child(8) { width: 16px; height: 16px; left: 84%; animation-duration: 15s; animation-delay: -13s; }
+.bubble:nth-child(9) { width: 16px; height: 16px; left: 66%; animation-duration: 14s; animation-delay: -6s; }
+.bubble:nth-child(10) { width: 28px; height: 28px; left: 100%; animation-duration: 19s; animation-delay: -14s; }
+.bubble:nth-child(11) { width: 12px; height: 12px; left: 23%; animation-duration: 12s; animation-delay: -1s; }
+.bubble:nth-child(12) { width: 24px; height: 24px; left: 40%; animation-duration: 19s; animation-delay: -8s; }
+.bubble:nth-child(13) { width: 28px; height: 28px; left: 85%; animation-duration: 9s; animation-delay: -4s; }
+.bubble:nth-child(14) { width: 26px; height: 26px; left: 47%; animation-duration: 21s; animation-delay: -8s; }
+.bubble:nth-child(15) { width: 8px; height: 8px; left: 63%; animation-duration: 18s; animation-delay: -5s; }
+.bubble:nth-child(16) { width: 8px; height: 8px; left: 33%; animation-duration: 21s; animation-delay: -15s; }
 
 
 main {
@@ -101,7 +99,7 @@ nav { width: 100%; display: flex; flex-direction: column; gap: 14px; }
   width: 46px; height: 46px; border-radius: 15px; display: grid; place-items: center;
   background: var(--navy); color: var(--foam);
 }
-.icon svg { width: 26px; height: 26px; }
+.icon svg, .icon img { width: 26px; height: 26px; }
 .text { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
 .name { font-family: var(--display); font-weight: 600; font-size: 1.15rem; line-height: 1.15; }
 .handle { font-size: 0.85rem; font-weight: 700; color: #4d6684; overflow-wrap: anywhere; }
@@ -112,7 +110,7 @@ nav { width: 100%; display: flex; flex-direction: column; gap: 14px; }
   animation: glow 2.6s ease-in-out infinite;
 }
 .link.steam .icon { width: 56px; height: 56px; border-radius: 18px; }
-.link.steam .icon svg { width: 32px; height: 32px; }
+.link.steam .icon img { width: 32px; height: 32px; }
 .link.steam .name { font-size: 1.4rem; font-weight: 700; }
 .link.steam .handle { color: #5b4a06; }
 @keyframes glow {
